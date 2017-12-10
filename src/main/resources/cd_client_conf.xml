@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This configuration supports placeholders for properties in ${placeholderValue} 
+	format. For example: <ServiceConfig CacheEnabled="${cacheEnabled}" ConnectionTimeout="${connectionTimeout}" 
+	CacheExpirationDuration="${cacheExpirationDuration}" CacheProviderClass="${cacheProviderClass}"> 
+	... </ServiceConfig> To override the default cache behaviour, define a CacheUri 
+	within the ServiceConfig element. For example: CacheUri="ehcache-context.xml". -->
+<ServiceConfig CacheEnabled="true" ConnectionTimeout="10000"
+	CacheExpirationDuration="600" ServiceAvailabilityCheck="true"
+	CacheProviderClass="com.sdl.web.client.cache.GeneralCacheProvider"
+	CacheConnectionTimeout="10000" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="schemas/cd_client_conf.xsd">
+
+	<DiscoveryService ServiceUri="http://t2013sp1:8082/discovery.svc" />
+<!-- 	<TokenService ClientId="cduser" ClientSecret="CDUserP@ssw0rd"/> -->
+	<!-- <TokenService ClientId="cduser" ClientSecret="encrypted:o/cgCBwmULeOyUZghFaKJA=="/> -->
+</ServiceConfig>
+
+<!-- Configuration sample for using Distributed Caching with Redis. Please 
+	update following fields: CacheUri - in case of Redis is set to Redis host 
+	name with port number; CacheClientId - should be the same for a bunch of 
+	CIL's which meant to be one environment; CachePassword - Redis cache password. 
+	Delete this field if Redis is used without password; -->
+<!-- <ServiceConfig CacheEnabled="true" CacheUri="localhost:6379" ConnectionTimeout="10000" 
+	CacheExpirationDuration="600" ServiceAvailabilityCheck="true" CacheProviderClass="com.sdl.web.client.cache.distributed.RedisCacheProvider" 
+	CacheConnectionTimeout="10000" CacheClientId="defaultCacheClientId" CachePassword="encrypted:HzfQh9wYwAKShDxCm4DnnBnysAz9PtbDMFXMbPszSVY=" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="schemas/cd_client_conf.xsd"> 
+	<DiscoveryService ServiceUri="http://localhost:8082/discovery.svc"/> <TokenService 
+	ClientId="cduser" ClientSecret="encrypted:o/cgCBwmULeOyUZghFaKJA=="/> </ServiceConfig> -->
