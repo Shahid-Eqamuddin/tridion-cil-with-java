@@ -10,9 +10,9 @@
 	CacheConnectionTimeout="10000" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:noNamespaceSchemaLocation="schemas/cd_client_conf.xsd">
 
-	<DiscoveryService ServiceUri="http://t2013sp1:8082/discovery.svc" />
-<!-- 	<TokenService ClientId="cduser" ClientSecret="CDUserP@ssw0rd"/> -->
-	<!-- <TokenService ClientId="cduser" ClientSecret="encrypted:o/cgCBwmULeOyUZghFaKJA=="/> -->
+	<DiscoveryService ServiceUri="http://192.168.81.143:8082/discovery.svc" />
+	<TokenService ClientId="cduser" ClientSecret="CDUserP@ssw0rd" />
+
 </ServiceConfig>
 
 <!-- Configuration sample for using Distributed Caching with Redis. Please 
